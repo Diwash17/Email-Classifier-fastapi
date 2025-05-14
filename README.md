@@ -54,4 +54,53 @@ Project Organization
 
 --------
 
+
+## 🚀 Run Locally
+
+### ✅ Prerequisites
+
+- Python 3.10 or 3.11
+- `pip` or `conda`
+- `git` (optional)
+
+---
+
+### 🔧 Setup Instructions
+
+#### 1. Clone the Repository
+```bash
+git clone https://github.com/yourusername/Email-Classifier-fastapi.git
+cd Email-Classifier-fastapi
 <p><small>Project based on the <a target="_blank" href="https://drivendata.github.io/cookiecutter-data-science/">cookiecutter data science project template</a>. #cookiecutterdatascience</small></p>
+
+# Using venv
+python3 -m venv env
+source env/bin/activate      # Windows: .\env\Scripts\activate
+
+## 3. Install Required Packages
+pip install -r requirements.txt
+
+#  Create a .env File
+MODEL_PATH=app/models/email_classifier.pkl
+ENV=development
+
+# Run the FastAPI Server
+uvicorn app.main:app --reload
+
+Once the server is running:
+	•	Swagger UI → http://127.0.0.1:8000/docs
+
+ Example API Usage
+
+ Endpoint
+
+POST /api/v1/predict    
+
+ Sample Request
+ {
+  "text": "Congratulations! You have won a free ticket!"
+}
+Sample Response
+{
+  "prediction": "spam"
+}
