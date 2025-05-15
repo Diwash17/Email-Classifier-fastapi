@@ -148,3 +148,21 @@ git push origin main
 You can check the status under the Actions tab in your GitHub repository.
 
 ⸻
+
+
+## ✅ 12-Factor App Compliance
+
+| # | Factor                     | Status        | Notes |
+|---|----------------------------|---------------|-------|
+| 1️⃣ | **Codebase**               | ✅ Followed    | Single Git-tracked codebase |
+| 2️⃣ | **Dependencies**           | ✅ Followed    | Declared in `requirements.txt` |
+| 3️⃣ | **Config**                 | ✅ Followed    | `.env` file + `dotenv` loaded |
+| 4️⃣ | **Backing Services**       | ✅ Followed    | Model/vectorizer loaded externally |
+| 5️⃣ | **Build, Release, Run**    | ⚠️ Partial     | Docker used, but release phase isn't clearly separated |
+| 6️⃣ | **Processes**              | ✅ Followed    | Stateless FastAPI endpoints |
+| 7️⃣ | **Port Binding**           | ✅ Followed    | Binds using `uvicorn` |
+| 8️⃣ | **Concurrency**            | ⚠️ Partial     | Not yet configured for multi-worker scalability |
+| 9️⃣ | **Disposability**          | ✅ Followed    | Fast start/stop, no persistent state |
+| 🔟 | **Dev/Prod Parity**        | ⚠️ Partial     | Docker helps, but no prod deployment setup yet |
+| 1️⃣1️⃣ | **Logs**                   | ⚠️ Partial     | Logs to console, but no centralized logging |
+| 1️⃣2️⃣ | **Admin Processes**        | ✅ Followed    | Pytest and Makefile for admin/testing |
