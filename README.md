@@ -104,3 +104,47 @@ Sample Response
 {
   "prediction": "spam"
 }
+
+Run Pytest with PYTHONPATH Set
+
+This ensures the app module is correctly discovered.
+bash
+PYTHONPATH=. pytest tests/test_predict.py
+
+🐳 Docker Support
+
+🏗️ Build Docker Image
+bash
+docker build -t email-classifier-fastapi .
+
+🚀 Run the Docker Container
+bash
+docker run -d -p 8000:8000 --env-file .env email-classifier-fastapi
+
+
+⸻
+
+🔁 CI/CD – GitHub Actions
+
+This repo includes a CI workflow that:
+	•	Installs Python 3.12
+	•	Installs dependencies
+	•	Runs tests with pytest
+
+✅ Workflow File
+
+.github/workflows/test.yml
+
+To Trigger CI/CD
+
+Every time you push or create a pull request:
+bash 
+git add .
+git commit -m "Trigger CI test"
+git push origin main
+✅ CI passes if tests succeed
+❌ CI fails if tests break
+
+You can check the status under the Actions tab in your GitHub repository.
+
+⸻
