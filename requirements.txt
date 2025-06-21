@@ -11,7 +11,7 @@ python-dotenv>=0.5.1
 fastapi
 uvicorn
 python-dotenv
-scikit-learn
+sklearn
 pandas
 numpy
 matplotlib
